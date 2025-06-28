@@ -1,59 +1,58 @@
+'use client';
+
 import Link from 'next/link';
-import Image from 'next/image';
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { Instagram, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-primary text-white">
-      <div className="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between px-4 sm:px-6 py-6 gap-4">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          {/* <Image
-            src="/assets/images/elvora-stack.png"
-            alt="Elvora Logo"
-            width={48}
-            height={48}
-            className="object-contain"
-          /> */}
-          <h3 className='text-2xl text-secondary1'>ELVORA</h3>
-        </div>
+    <footer className="bg-primary text-white border-t border-purple-400/20 w-full">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 py-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+          {/* Logo Text */}
+          <div className="flex items-center justify-center sm:justify-start">
+            <span className="text-secondary1 font-trajan text-lg tracking-widest">
+              ELVORA
+            </span>
+          </div>
 
-        {/* Center Nav Links */}
-        <div className="flex flex-wrap justify-center gap-6 text-sm sm:text-base font-medium text-white/80">
-          {[
-            { href: '/', label: 'Home' },
-            { href: '#about', label: 'About' },
-            { href: '#services', label: 'Services' },
-            { href: '#contact', label: 'Contact' },
-          ].map((link) => (
+          {/* Nav Links */}
+          <nav className="flex flex-wrap justify-center items-center gap-5 text-sm font-medium">
+            {[
+              { href: '#about', label: 'About Us' },
+              { href: '#services', label: 'Our Services' },
+              { href: '#contact', label: 'Contact Us' },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-white/80 hover:text-purple-400 transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Social Icons */}
+          <div className="flex gap-3 items-center justify-center sm:justify-end">
             <Link
-              key={link.href}
-              href={link.href}
-              className="hover:text-secondary2 transition"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-white/10 hover:bg-secondary1 rounded-full transition duration-200 hover:scale-110"
+              aria-label="Instagram"
             >
-              {link.label}
+              <Instagram size={18} />
             </Link>
-          ))}
-        </div>
-
-        {/* Social Icons */}
-        <div className="flex gap-4 text-white text-lg">
-          <Link
-            href="https://instagram.com/yourhandle"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-secondary2 transition"
-          >
-            <FaInstagram />
-          </Link>
-          <Link
-            href="https://wa.me/2340000000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-secondary2 transition"
-          >
-            <FaWhatsapp />
-          </Link>
+            <Link
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-white/10 hover:bg-secondary1 rounded-full transition duration-200 hover:scale-110"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle size={18} />
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

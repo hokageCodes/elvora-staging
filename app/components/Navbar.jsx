@@ -14,7 +14,7 @@ export default function Navbar() {
     { href: '#services', label: 'Our Services' },
     { href: '#why', label: 'Why Elvora?' },
     { href: '#testimonials', label: 'Testimonials' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#contact', label: 'Contact Us' },
   ];
 
   return (
@@ -54,14 +54,14 @@ export default function Navbar() {
               </Link>
             </nav>
 
-            {/* Mobile Menu Toggle */}
-            <div className="flex items-center gap-3 lg:hidden">
-              <Link
+            {/* Mobile Menu Toggle + CTA */}
+            <div className="flex items-center gap-2 lg:hidden">
+              {/* <Link
                 href="#apply"
-                className="bg-secondary1 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-secondary2 transition hover:scale-105"
+                className="bg-secondary1 text-white px-5 py-2.5 rounded-full text-[15px] font-semibold leading-tight hover:bg-secondary2 transition hover:scale-105"
               >
-                Book Your Next Event
-              </Link>
+                Book An Event
+              </Link> */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 hover:bg-white/10 rounded-full transition"
@@ -82,14 +82,7 @@ export default function Navbar() {
         <div className="flex flex-col h-full px-6 pt-6">
           {/* Mobile Header */}
           <div className="flex justify-between items-center">
-            <div className="relative h-16 w-16">
-              {/* <Image
-                src="/assets/images/elvora-stack.png"
-                alt="Elvora Logo"
-                fill
-                className="object-contain"
-              /> */}
-            </div>
+            <div className="relative h-16 w-16" />
             <button
               onClick={() => setIsOpen(false)}
               className="p-2 hover:bg-white/10 rounded-full text-white"
@@ -98,10 +91,9 @@ export default function Navbar() {
             </button>
           </div>
 
-
           {/* Mobile Nav Links */}
           <nav className="flex flex-col justify-center flex-1 space-y-8 mt-12">
-            {navLinks.map((item, idx) => (
+            {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -117,11 +109,9 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="inline-flex items-center gap-3 bg-secondary1 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-secondary2 hover:scale-105 transition"
             >
-              Book Your Next Event
+              Book An Event
               <ArrowUpRight size={20} />
             </Link>
-
-            {/* <p className="text-white/60 text-sm mt-6">Ready to book your moment?</p> */}
           </nav>
 
           <div className="pb-6 border-t border-purple-400/20 text-white/40 text-sm pt-4">
