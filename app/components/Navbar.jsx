@@ -24,9 +24,9 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-[80px]">
             {/* Logo */}
             <Link href="/" className="flex items-center h-full">
-              <div className="relative h-[200px] w-[200px]">
+              <div className="relative h-[130px] w-[130px]">
                 <Image
-                  src="/assets/images/elvora-stack.png"
+                  src="/assets/images/elvora-logo.png"
                   alt="Elvora Logo"
                   fill
                   className="object-contain -ml-12"
