@@ -14,7 +14,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-8"
+          className="space-y-8 md:mt-24"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-trajan uppercase text-secondary2">
             Welcome to Elvora

@@ -9,14 +9,14 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/assets/images/venue.jpeg"
+          src="/assets/images/ev.jpg"
           alt="Elegant event setup"
           fill
           className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-white/10" />
+        <div className="absolute inset-0 bg-white/50" />
       </div>
 
       {/* Centered Content */}
@@ -26,7 +26,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 font-light leading-relaxed max-w-3xl mb-10">
-            For celebrations your guests will remember for years
+            Celebrations your guests will remember for years
         </p>
 
         <Link
