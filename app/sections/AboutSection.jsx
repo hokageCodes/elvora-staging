@@ -6,8 +6,13 @@ import Link from 'next/link';
 
 export default function AboutSection() {
   return (
-    <section className="bg-primary text-white font-poppins py-20 px-6 sm:px-10 lg:px-20">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+    <section
+      className="relative bg-fixed bg-cover bg-center bg-no-repeat text-white font-poppins py-20 px-6 sm:px-10 lg:px-20"
+      style={{ backgroundImage: 'url(/assets/images/parallax-bg.jpg)' }} // Replace with your actual background
+    >
+      <div className="absolute inset-0 bg-primary/90 backdrop-blur-sm -z-10" />
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start relative z-10">
         {/* LEFT COLUMN */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -42,23 +47,26 @@ export default function AboutSection() {
           <div className="mt-10 space-y-4">
             <h3 className="text-xl font-trajan uppercase text-secondary2">Founder’s Note</h3>
             <blockquote className="text-white/60 italic border-l-4 border-secondary2 pl-4 text-base">
-              No event should ever be the same because no two clients are the same - our approach to every celebration is this: <br />
+              No event should ever be the same because no two clients are the same — our approach to every celebration is this: <br />
               Make it unique, Make it seamless, Make it elegant
             </blockquote>
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN - Image or Placeholder */}
+        {/* RIGHT COLUMN - Founder Image */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="w-full aspect-[3/4] bg-white/10 rounded-xl flex items-center justify-center text-white/40 text-sm">
-            {/* Optional placeholder; can replace with <Image /> */}
-            Founder image goes here
-          </div>
+          <Image
+            src="/assets/images/director.jpg"
+            alt="Founder"
+            width={400}
+            height={533}
+            className="w-full aspect-[3/4] object-cover rounded-xl"
+          />
         </motion.div>
       </div>
     </section>
