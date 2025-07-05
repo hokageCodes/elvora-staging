@@ -24,6 +24,7 @@ export default function TestimonialsSection() {
 
   return (
     <section
+      id='testimonials'
       className="relative bg-fixed bg-center no-repeat bg-contain text-primary py-24 px-6 sm:px-10 lg:px-20 font-poppins"
       style={{ backgroundImage: `url('/assets/images/venue.jpeg')` }}
     >

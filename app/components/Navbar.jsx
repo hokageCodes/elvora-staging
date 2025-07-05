@@ -11,7 +11,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '#about', label: 'About Us' },
-    { href: '#services', label: 'Offerings' },
+    { href: '#offerings', label: 'Offerings' },
     { href: '#why', label: 'Why Elvora?' },
     { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact Us' },

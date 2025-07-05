@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function WorkWithUsSection() {
   return (
-    <section className="bg-white text-primary py-24 px-2 sm:px-10 lg:px-24 font-poppins">
+    <section className="bg-white text-primary py-24 px-2 sm:px-10 lg:px-24 font-poppins" id='contact'>
       {/* Heading + Copy */}
       <div className="max-w-3xl mx-auto text-center mb-16">
         <motion.h2

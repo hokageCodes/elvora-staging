@@ -6,6 +6,7 @@ import Image from 'next/image';
 export default function FoundersNoteSection() {
   return (
     <section
+      id='about'
       className="relative bg-fixed bg-cover bg-center bg-no-repeat text-white font-poppins py-20 px-2 sm:px-10 lg:px-20"
       style={{ backgroundImage: 'url(/assets/images/parallax-bg.jpg)' }} // Replace with your actual background
     >

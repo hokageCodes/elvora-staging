@@ -46,7 +46,7 @@ const phases = [
 
 export default function RecipeSection() {
   return (
-    <section className="bg-[#fefefe] py-24 px-2 sm:px-10 lg:px-24 font-poppins text-primary">
+    <section className="bg-[#fefefe] py-24 px-2 sm:px-10 lg:px-24 font-poppins text-primary" id='about'>
       {/* Intro Copy */}
       <div className="max-w-4xl mx-auto text-center mb-20">
         <motion.h2

@@ -31,7 +31,7 @@ const offerings = [
 
 export default function OfferingsSection() {
   return (
-    <section className="bg-white text-primary py-12 px-2 sm:px-10 lg:px-24 font-poppins overflow-hidden">
+    <section id='offerings' className="bg-white text-primary py-12 px-2 sm:px-10 lg:px-24 font-poppins overflow-hidden">
       <div className="max-w-5xl mx-auto text-center mb-20">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-trajan uppercase text-primary mb-4">
           Offerings
