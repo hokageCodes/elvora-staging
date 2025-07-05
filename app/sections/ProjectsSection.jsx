@@ -22,7 +22,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className="bg-white text-primary py-12 px-6 sm:px-10 lg:px-20 font-poppins">
+    <section className="bg-white text-primary py-12 px-2 sm:px-10 lg:px-20 font-poppins">
       {/* Heading */}
       <div className="text-center max-w-4xl mx-auto mb-20">
         <motion.h2
@@ -64,7 +64,7 @@ export default function ProjectsSection() {
                 className="object-cover object-center"
               />
             </div>
-            <div className="p-6">
+            <div className="p-3">
               <p className="text-xs uppercase text-secondary1 tracking-widest mb-2 font-semibold">
                 {project.category}
               </p>

@@ -1,75 +1,100 @@
 'use client';
 
-import { Lightbulb, Sparkles, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Eye, Sparkles, ClipboardCheck } from 'lucide-react'; // Swap for your icons
+
+const phases = [
+  {
+    title: 'ENVISION',
+    icon: <Eye className="w-10 h-10 text-primary" />,
+    description:
+      'Every unforgettable event starts with a story — yours. We take the time to understand your vision, ask the right questions, and dream alongside you. From there, we build the foundation of your event with intention, clarity, and creativity.',
+    bullets: [
+      'Discover and recommend venues that align with your vision and vibe',
+      'Curate a tailored team of trusted vendors, handling outreach and negotiations',
+      'Map out clear, comprehensive timelines that keep every detail in sync',
+      'Craft personalized food and beverage experiences with expert caterers, mixologists, and bakers',
+      'Oversee all client-facing communication from guest list management and RSVPs to etiquette advice and website coordination',
+    ],
+  },
+  {
+    title: 'ELEVATE',
+    icon: <Sparkles className="w-10 h-10 text-primary" />,
+    description:
+      'Design is where the magic takes form. With a keen eye and an instinct for harmony, we translate your vision into elevated design moments, every element curated to feel cohesive, intentional, and uniquely yours.',
+    bullets: [
+      'Select refined stationers to set the tone through paper and print',
+      'Create spatial layouts and floor plans that support comfort, flow, and energy',
+      'Design mood-setting lighting, immersive sound, and dramatic staging to suit the setting',
+      'Curate florals, luxury tabletop pieces, and lounge setups that bring softness and elegance',
+      'Present detailed visual decks and storyboards so you can see your vision come to life',
+    ],
+  },
+  {
+    title: 'EXECUTE',
+    icon: <ClipboardCheck className="w-10 h-10 text-primary" />,
+    description:
+      'When the big day arrives, we are your quiet confidence behind the scenes - anticipating needs, managing logistics, and ensuring everything goes according to plan. You just show up and enjoy it all.',
+    bullets: [
+      'Manage vendor relationships and workflows to ensure smooth operations',
+      'Provide thoughtful guest support and concierge-style touch points throughout the experience',
+      'Oversee every aspect of event day — from early setup to the final strike',
+      'Execute the celebration with precision, flexibility, and calm, so you can focus on the moments that matter',
+    ],
+  },
+];
 
 export default function RecipeSection() {
   return (
-    <section className="bg-white py-24 px-6 sm:px-10 lg:px-20 text-primary font-poppins">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl font-trajan uppercase mb-4">
+    <section className="bg-[#fefefe] py-24 px-2 sm:px-10 lg:px-24 font-poppins text-primary">
+      {/* Intro Copy */}
+      <div className="max-w-4xl mx-auto text-center mb-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl sm:text-5xl font-trajan uppercase text-secondary2 mb-6"
+        >
           Our Recipe
-        </h2>
-        <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto font-light mb-12">
-          Backed by strong vendor relationships, extensive experience, and good old-fashioned know-how: we’ve mastered the art of fine entertaining.
-        </p>
+        </motion.h2>
+        <motion.blockquote
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="italic text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+        >
+          “Every event begins with a story. We start with visuals, textures, and emotion, building moodboards that serve as blueprints for experience. Then we layer in detail, coordination, and creative strategy to bring it all to life.”
+        </motion.blockquote>
+      </div>
 
-        {/* Quote Section */}
-        <blockquote className="italic text-secondary1 text-lg sm:text-xl max-w-4xl mx-auto mb-16 border-l-4 border-secondary2 pl-6">
-          Every project begins with a story. We start with visuals, textures, and atmosphere — building moodboards that serve as blueprints for emotion. Then we layer in detail, coordination, and experience design to bring it all to life.
-        </blockquote>
-
-        {/* Subheading */}
-        <h3 className="text-xl uppercase tracking-wider text-primary mb-10 font-semibold">
-          Here’s what we’ll take off your plate:
-        </h3>
-
-        {/* 3-Column Grid */}
-        <div className="grid gap-12 md:grid-cols-3 text-left">
-          {/* Envision */}
-          <div className="space-y-5">
-            <div className="w-14 h-14 bg-secondary2/10 text-secondary2 flex items-center justify-center rounded-md">
-              <Lightbulb size={28} />
+      {/* 3-Column Grid */}
+      <div className="grid lg:grid-cols-3 gap-16 max-w-7xl mx-auto">
+        {phases.map((phase, index) => (
+          <motion.div
+            key={phase.title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2, duration: 0.6 }}
+            className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-neutral-200"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              {phase.icon}
+              <h3 className="text-xl sm:text-2xl font-trajan tracking-wide">
+                {phase.title}
+              </h3>
             </div>
-            <h4 className="text-2xl font-semibold font-trajan">Envision</h4>
-            <ul className="text-gray-700 text-sm leading-relaxed list-disc list-inside space-y-1">
-              <li>Discover and recommend venues that align with your vision and vibe</li>
-              <li>Curate a tailored team of trusted vendors, handling outreach and negotiations</li>
-              <li>Map out clear, comprehensive timelines that keep every detail in sync</li>
-              <li>Craft personalized food and beverage experiences with expert caterers, mixologists, and bakers</li>
-              <li>Oversee all client-facing communication, from guest list management and RSVPs to etiquette advice and website coordination</li>
+            <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
+              {phase.description}
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm">
+              {phase.bullets.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
             </ul>
-          </div>
-
-          {/* Elevate */}
-          <div className="space-y-5">
-            <div className="w-14 h-14 bg-secondary2/10 text-secondary2 flex items-center justify-center rounded-md">
-              <Sparkles size={28} />
-            </div>
-            <h4 className="text-2xl font-semibold font-trajan">Elevate</h4>
-            <ul className="text-gray-700 text-sm leading-relaxed list-disc list-inside space-y-1">
-              <li>Select refined stationers and calligraphers to set the tone through paper and print</li>
-              <li>Create spatial layouts and floorplans that support comfort, flow, and energy</li>
-              <li>Design mood-setting lighting, immersive sound, and dramatic staging to suit the setting</li>
-              <li>Curate florals, luxury tabletop pieces, and lounge setups that bring softness and elegance</li>
-              <li>Present detailed visual decks and storyboards so you can see your vision come to life</li>
-            </ul>
-          </div>
-
-          {/* Execute */}
-          <div className="space-y-5">
-            <div className="w-14 h-14 bg-secondary2/10 text-secondary2 flex items-center justify-center rounded-md">
-              <CheckCircle size={28} />
-            </div>
-            <h4 className="text-2xl font-semibold font-trajan">Execute</h4>
-            <ul className="text-gray-700 text-sm leading-relaxed list-disc list-inside space-y-1">
-              <li>Manage vendor relationships and workflows to ensure smooth operations</li>
-              <li>Provide thoughtful guest support and concierge-style touchpoints throughout the experience</li>
-              <li>Oversee every aspect of event day, from early setup to the final strike</li>
-              <li>Execute the celebration with precision, flexibility, and calm, so you can focus on the moments that matter</li>
-            </ul>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

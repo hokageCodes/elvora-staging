@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
@@ -19,27 +19,32 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const [index, setIndex] = useState(0);
-
   const next = () => setIndex((prev) => (prev + 1) % testimonials.length);
   const prev = () => setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="bg-white text-primary py-12 px-6 sm:px-10 lg:px-20 font-poppins">
+    <section
+      className="relative bg-fixed bg-center no-repeat bg-contain text-primary py-24 px-6 sm:px-10 lg:px-20 font-poppins"
+      style={{ backgroundImage: `url('/assets/images/venue.jpeg')` }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70 z-0" />
+
       {/* Section Heading */}
-      <div className="text-center max-w-4xl mx-auto mb-16">
+      <div className="relative z-10 text-center max-w-4xl mx-auto mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl font-trajan uppercase text-secondary2"
+          className="text-4xl sm:text-5xl font-trajan uppercase text-white"
         >
           Our Clients Say the Nicest Things
         </motion.h2>
       </div>
 
       {/* Testimonial Slider */}
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative z-10 max-w-3xl mx-auto text-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -49,10 +54,11 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.5 }}
             className="text-center px-4 sm:px-10"
           >
-            <blockquote className="text-xl sm:text-2xl font-light text-gray-800 leading-relaxed">
+            <Quote className="mx-auto mb-4 opacity-30" size={40} />
+            <blockquote className="text-xl sm:text-2xl font-light leading-relaxed italic">
               “{testimonials[index].quote}”
             </blockquote>
-            <p className="mt-6 text-secondary1 text-sm sm:text-base uppercase tracking-widest font-medium">
+            <p className="mt-6 text-secondary2 text-sm sm:text-2xl uppercase tracking-widest font-medium">
               — {testimonials[index].author}
             </p>
           </motion.div>
@@ -62,17 +68,17 @@ export default function TestimonialsSection() {
         <div className="flex justify-between items-center mt-12 max-w-xs mx-auto">
           <button
             onClick={prev}
-            className="p-2 border border-gray-300 hover:border-black rounded-full transition-colors"
+            className="p-2 border border-white/30 hover:border-white rounded-full transition-all hover:scale-105"
             aria-label="Previous Testimonial"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={20} className="text-white" />
           </button>
           <button
             onClick={next}
-            className="p-2 border border-gray-300 hover:border-black rounded-full transition-colors"
+            className="p-2 border border-white/30 hover:border-white rounded-full transition-all hover:scale-105"
             aria-label="Next Testimonial"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={20} className="text-white" />
           </button>
         </div>
       </div>

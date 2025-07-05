@@ -2,6 +2,7 @@
 import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import FooterBottom from './components/FooterBottom';
 
 export const metadata = {
   title: 'Your Landing Page',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FooterBottom />
       </body>
     </html>
   );

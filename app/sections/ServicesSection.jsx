@@ -5,18 +5,24 @@ import { motion } from 'framer-motion';
 const offerings = [
   {
     number: '01',
+    title: 'Wedding',
+    description:
+      'Bespoke, beautiful, and completely you. We craft timeless wedding experiences from the heart.',
+  },
+  {
+    number: '02',
     title: 'Corporate Experiences',
     description:
       'From product launches to leadership retreats to end-of-year celebrations, we design with your audience in mind, delivering polished, engaging events that elevate your brand.',
   },
   {
-    number: '02',
+    number: '03',
     title: 'Social Celebrations',
     description:
       'From stylish brunches to unforgettable birthday celebrations to celebration of life, we create moments that reflect your energy and vision.',
   },
   {
-    number: '03',
+    number: '04',
     title: 'Creative Direction',
     description:
       'We craft visual worlds that communicate your message — from moodboards to set design and production consulting.',
@@ -25,7 +31,7 @@ const offerings = [
 
 export default function OfferingsSection() {
   return (
-    <section className="bg-white text-primary py-12 px-6 sm:px-10 lg:px-24 font-poppins overflow-hidden">
+    <section className="bg-white text-primary py-12 px-2 sm:px-10 lg:px-24 font-poppins overflow-hidden">
       <div className="max-w-5xl mx-auto text-center mb-20">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-trajan uppercase text-primary mb-4">
           Offerings
@@ -54,7 +60,7 @@ export default function OfferingsSection() {
               <h3 className="text-2xl font-trajan text-primary mb-3">
                 {item.title}
               </h3>
-              <p className="text-base text-gray-700 font-light leading-relaxed">
+              <p className="text-base text-gray-700 font-light leading-relaxed text-justify">
                 {item.description}
               </p>
             </div>
