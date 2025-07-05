@@ -1,44 +1,84 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { ChevronDown } from 'lucide-react'; // Optional: Replace with any arrow icon you prefer
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen md:h-[99vh] text-primary font-poppins overflow-hidden">
-      {/* Background Image */}
+    <section className="min-h-screen flex flex-col justify-center sm:px-6 md:px-10 lg:px-6 font-poppins overflow-hidden relative">
+      {/* Background Image - visible on all screens */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="/assets/images/ev.jpg"
-          alt="Elegant event setup"
+          alt="Background"
           fill
-          className="object-cover object-center opacity-70"
+          className="object-cover opacity-30"
           priority
-          sizes="100vw"
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-8 lg:px-16 max-w-6xl mx-auto">
-        <h1 className="text-[2rem] sm:text-[2.8rem] md:text-5xl lg:text-6xl xl:text-[6.5rem] font-trajan uppercase tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-br from-primary to-secondary2 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.4)] mb-6">
-          Elevating Every<br className="hidden sm:block" />
+      {/* Mobile Layout */}
+      <div className="block md:hidden pt-24 text-center">
+        <h1 className="text-[3rem] leading-tight font-bold">
+          Elevating Every
+        </h1>
+        <h1 className="text-[3.5rem] leading-tight font-semibold text-primary -mt-2">
           Occasion
         </h1>
 
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 font-light leading-relaxed max-w-md sm:max-w-xl md:max-w-2xl">
-          Celebrations your guests will remember for years.
+        <p className="mt-6 text-gray-00 text-lg leading-relaxed px-2">
+        We transform
+        planning overwhelm into an unforgettable reflection of your story. For celebrations your guests will remember for years. 
         </p>
+
+        {/* Hero Image Below Content */}
+        <div className="mt-8 px-4">
+          <Image
+            src="/assets/images/ev.jpg"
+            alt="Hero"
+            width={600}
+            height={400}
+            className="w-full max-h-[300px] object-cover rounded-lg"
+          />
+        </div>
+
+        {/* Bouncy Down Arrow */}
+        <div className="mt-12 flex justify-center">
+          <Link href="#contact" scroll={true}>
+            <ChevronDown className="w-8 h-8 text-primary animate-bounce" />
+          </Link>
+        </div>
       </div>
 
-      {/* Bouncing Arrow CTA */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 flex justify-center z-20 px-4">
-        <Link href="#contact" scroll={true} className="flex flex-col items-center group">
-          <span className="text-xs sm:text-sm text-gray-700 group-hover:text-secondary1 transition">
-            Take a Journey
-          </span>
-          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-secondary1 animate-bounce group-hover:text-secondary2 transition" />
-        </Link>
+      {/* Desktop Layout (untouched except bg fix) */}
+      <div className="hidden md:block">
+        <div className="mb-16 md:mb-16 px-12">
+          <h1 className="text-[4rem] lg:text-[4rem] xl:text-[6rem] font-bold leading-[200px] tracking-tight text-primary">
+            Elevating Every
+          </h1>
+          <h1 className="text-[6rem] lg:text-[8rem] xl:text-[12rem] font-semibold leading-[0.9] tracking-tight -mt-8 text-primary">
+            Occassion
+          </h1>
+        </div>
+
+        <div className="flex items-center gap-12 px-12">
+          {/* Scroll Button */}
+          <Link
+            href="#contact"
+            className="w-32 h-32 flex items-center justify-center rounded-full bg-secondary1 text-white text-2xl font-medium hover:bg-neutral-800 transition-all duration-300 flex-shrink-0"
+          >
+            Scroll
+          </Link>
+
+          {/* Paragraph */}
+          <div className="flex-1">
+            <p className="text-gray-600 text-3xl leading-relaxed text-right max-w-lg ml-auto">
+              For celebrations your guests will remember for years. We transform
+              planning overwhelm into an unforgettable reflection of your story.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
