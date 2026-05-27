@@ -4,25 +4,41 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Trajan Pro - Local font */
 @font-face {
-    font-family: 'Trajan Pro';
-    src: url('/assets/fonts/TrajanPro-Bold.otf') format('opentype'),
-            url('/fonts/TrajanPro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Trajan Pro';
+  src: url('/assets/fonts/TrajanPro-Bold.otf') format('opentype'),
+    url('/fonts/TrajanPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-  /* Optional: Set base font families */
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Trajan Pro', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Trajan Pro', serif;
 }
 
-p, span {
-    font-family: 'Poppins', sans-serif;
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
